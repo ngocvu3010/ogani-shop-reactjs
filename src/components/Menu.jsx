@@ -1,6 +1,17 @@
 import Banner from '../img/hero/banner.jpg';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {getCategory} from '../redux/actions';
+import {selectCategorySelector} from '../redux/selector';
 
 function Menu() {
+  const dispatch = useDispatch();
+  const categories = useSelector(selectCategorySelector);
+
+  useEffect(() => {
+    dispatch(getCategory());
+  }, []);
+
   return(
     <section className="hero">
       <div className="container">
@@ -12,39 +23,11 @@ function Menu() {
                 <span>All departments</span>
               </div>
               <ul>
-                <li>
-                  <a href="#">Fresh Meat</a>
-                </li>
-                <li>
-                  <a href="#">Vegetables</a>
-                </li>
-                <li>
-                  <a href="#">Fruit &amp; Nut Gifts</a>
-                </li>
-                <li>
-                  <a href="#">Fresh Berries</a>
-                </li>
-                <li>
-                  <a href="#">Ocean Foods</a>
-                </li>
-                <li>
-                  <a href="#">Butter &amp; Eggs</a>
-                </li>
-                <li>
-                  <a href="#">Fastfood</a>
-                </li>
-                <li>
-                  <a href="#">Fresh Onion</a>
-                </li>
-                <li>
-                  <a href="#">Papayaya &amp; Crisps</a>
-                </li>
-                <li>
-                  <a href="#">Oatmeal</a>
-                </li>
-                <li>
-                  <a href="#">Fresh Bananas</a>
-                </li>
+                {categories.map((category, index) => (
+                  <li key={index}>
+                    <a href="#">{category.name}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
