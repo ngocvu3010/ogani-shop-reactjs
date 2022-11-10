@@ -1,10 +1,11 @@
-import {GET_HOME_PRODUCT, GET_HOME_PRODUCT_SUCCESS, GET_HOME_PRODUCT_FAIL, GET_TOP_PRODUCT_SUCCESS, GET_TOP_PRODUCT, GET_TOP_PRODUCT_FAIL} from "../constants"
+import {GET_HOME_PRODUCT, GET_HOME_PRODUCT_SUCCESS, GET_HOME_PRODUCT_FAIL, GET_TOP_PRODUCT_SUCCESS, GET_TOP_PRODUCT, GET_TOP_PRODUCT_FAIL, GET_DETAIL_PRODUCT, GET_DETAIL_PRODUCT_SUCCESS, GET_DETAIL_PRODUCT_FAIL} from "../constants"
 
 const initialState = {
   featureProduct: [],
   lastestProduct: [],
   topRatedPRoduct: [],
   reviewProduct: [],
+  product: {},
   isLoading: false,
   isError: false,
   error: []
@@ -30,7 +31,7 @@ export default function productReducer(state = initialState, action) {
         ...state,
         isLoading: false,
         isError: true,
-        error: "error"
+        error: action.payload
       }
     }
 
@@ -54,9 +55,24 @@ export default function productReducer(state = initialState, action) {
         ...state,
         isLoading: false,
         isError: true,
-        error: "error"
+        error: action.payload
       }
     }
+
+    case GET_DETAIL_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        product: action.payload,
+        isLoading: false
+      }
+
+    case GET_DETAIL_PRODUCT_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        error: action.payload
+      }
 
     default:
       return state;

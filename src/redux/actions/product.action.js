@@ -1,4 +1,6 @@
-import {GET_HOME_PRODUCT, GET_HOME_PRODUCT_SUCCESS, GET_TOP_PRODUCT, GET_TOP_PRODUCT_SUCCESS} from '../constants';
+import {GET_HOME_PRODUCT, GET_HOME_PRODUCT_SUCCESS,
+  GET_TOP_PRODUCT, GET_TOP_PRODUCT_SUCCESS,
+  GET_DETAIL_PRODUCT, GET_DETAIL_PRODUCT_SUCCESS, GET_DETAIL_PRODUCT_FAIL} from '../constants';
 
 export function getHomeProducts(payload){
   return {
@@ -24,6 +26,27 @@ export function getHomeProductsSuccess(payload){
 export function getTopProductsSuccess(payload){
   return {
     type: GET_TOP_PRODUCT_SUCCESS,
+    payload
+  }
+}
+
+export function getProductDetail(payload) {
+  return {
+    type: GET_DETAIL_PRODUCT,
+    payload
+  }
+}
+
+export function getProductDetailSuccess(payload) {
+  return {
+    type: GET_DETAIL_PRODUCT_SUCCESS,
+    payload
+  }
+}
+
+export function getProductDetailFail(payload) {
+  return {
+    type: GET_DETAIL_PRODUCT_FAIL,
     payload
   }
 }

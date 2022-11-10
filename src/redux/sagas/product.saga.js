@@ -1,7 +1,8 @@
 import { call, put, takeLatest, takeEvery } from 'redux-saga/effects';
-import {getHomeProductsSuccess, getTopProductsSuccess} from '../actions';
-import {GET_HOME_PRODUCT_FAIL, GET_HOME_PRODUCT, GET_TOP_PRODUCT, GET_TOP_PRODUCT_FAIL} from '../constants';
-import {getProducts} from '../../apis/productsApi';
+import {getHomeProductsSuccess, getTopProductsSuccess, getProductDetailSuccess, getProductDetailFail} from '../actions';
+import {GET_HOME_PRODUCT_FAIL, GET_HOME_PRODUCT, GET_TOP_PRODUCT,
+  GET_TOP_PRODUCT_FAIL, GET_DETAIL_PRODUCT, GET_DETAIL_PRODUCT_FAIL} from '../constants';
+import {getProducts, getDetailProduct} from '../../apis/productsApi';
 
 function* getProductHomeSaga(action) {
   try {
@@ -26,9 +27,20 @@ function* getTopProductSaga(action) {
   }
 }
 
+function* getDetailProductSaga(action) {
+  try {
+    const response = yield call(getDetailProduct, action.payload);
+
+    yield put(getProductDetailSuccess(response.data));
+  } catch (error) {
+    yield put(getProductDetailFail(error));
+  }
+}
+
 function* productsSaga() {
   yield takeEvery(GET_HOME_PRODUCT, getProductHomeSaga);
-  yield takeEvery(GET_TOP_PRODUCT, getTopProductSaga)
+  yield takeEvery(GET_TOP_PRODUCT, getTopProductSaga);
+  yield takeEvery(GET_DETAIL_PRODUCT, getDetailProductSaga);
 }
 
 export default productsSaga;

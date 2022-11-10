@@ -4,6 +4,8 @@ import {getHomeProducts} from '../../redux/actions';
 import {selectFeatureProductSelector, selectCategorySelector} from "../../redux/selector";
 import productImage from '../../img/featured/feature-2.jpg';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
+
 const MAX_FEATURE_PRODUCTS = 12;
 
 function FeatureProduct() {
@@ -48,12 +50,14 @@ function FeatureProduct() {
                 </li>
               </ul>
             </div>
-            <div className="featured__item__text">
-              <h6>
-                <a href="#">{product.name}</a>
-              </h6>
-              <h5>${product.newPrice}</h5>
-            </div>
+            <Link to={`/product/${product.id}`} >
+              <div className="featured__item__text">
+                <h6>
+                  <a href="#">{product.name}</a>
+                </h6>
+                <h5>${product.newPrice}</h5>
+              </div>
+            </Link>
           </div>
         </div>
       )

@@ -8,7 +8,6 @@ function UserLayout({component: Component}) {
   return (
     <>
       <Header />
-      <Menu />
       <div className="main">
         <Component />
       </div>

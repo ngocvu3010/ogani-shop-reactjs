@@ -5,10 +5,13 @@ import Category from '../../components/Home/Category';
 import FeatureProduct from '../../components/Home/FeatureProduct';
 import LatestProduct from '../../components/Home/LatestProduct';
 import Blog from '../../components/Home/Blog';
+import Menu from '../../components/Menu';
+
 
 function Home(){
   return(
     <>
+      <Menu />
       <Category />
       <FeatureProduct />
       <div className="banner">
