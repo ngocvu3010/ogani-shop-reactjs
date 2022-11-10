@@ -159,7 +159,8 @@
       "rate": 4,
       "newPrice": 60000,
       "news": true,
-      "tagId": 1
+      "tagId": 1,
+      "hasReview": false
     },
     {
       "id": 2,
@@ -174,7 +175,8 @@
       "rate": 5,
       "newPrice": 23000,
       "news": true,
-      "tagId": 2
+      "tagId": 2,
+      "hasReview": false
     },
     {
       "id": 3,
@@ -189,7 +191,8 @@
       "rate": 5,
       "newPrice": 35000,
       "news": false,
-      "tagId": 2
+      "tagId": 2,
+      "hasReview": false
     },
     {
       "id": 4,
@@ -204,7 +207,8 @@
       "rate": 1,
       "newPrice": 20000,
       "news": true,
-      "tagId": 2
+      "tagId": 2,
+      "hasReview": true
     },
     {
       "id": 5,
@@ -220,7 +224,8 @@
       "newPrice": 23000,
       "oldPrice": 30000,
       "news": true,
-      "tagId": 2
+      "tagId": 2,
+      "hasReview": false
     },
     {
       "id": 6,
@@ -236,7 +241,8 @@
       "newPrice": 34000,
       "oldPrice": 38000,
       "news": true,
-      "tagId": 1
+      "tagId": 1,
+      "hasReview": false
     },
     {
       "id": 7,
@@ -252,7 +258,8 @@
       "newPrice": 70000,
       "oldPrice": 72000,
       "news": false,
-      "tagId": 2
+      "tagId": 2,
+      "hasReview": false
     },
     {
       "id": 8,
@@ -267,7 +274,8 @@
       "rate": 1,
       "newPrice": 90000,
       "news": true,
-      "tagId": 4
+      "tagId": 4,
+      "hasReview": false
     },
     {
       "id": 9,
@@ -282,7 +290,8 @@
       "rate": 3,
       "newPrice": 12000,
       "news": false,
-      "tagId": 3
+      "tagId": 3,
+      "hasReview": false
     },
     {
       "id": 10,
@@ -297,7 +306,8 @@
       "rate": 3,
       "newPrice": 34000,
       "news": false,
-      "tagId": 5
+      "tagId": 5,
+      "hasReview": false
     },
     {
       "id": 11,
@@ -312,7 +322,8 @@
       "rate": 2,
       "newPrice": 44000,
       "news": true,
-      "tagId": 1
+      "tagId": 1,
+      "hasReview": false
     },
     {
       "id": 12,
@@ -329,7 +340,8 @@
       "oldPrice": 29000,
       "news": true,
       "tagId": 1,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 13,
@@ -346,7 +358,8 @@
       "oldPrice": 29000,
       "news": false,
       "tagId": 4,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 14,
@@ -363,7 +376,8 @@
       "oldPrice": 29000,
       "news": true,
       "tagId": 6,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 15,
@@ -380,7 +394,8 @@
       "oldPrice": 29000,
       "news": true,
       "tagId": 4,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 16,
@@ -397,7 +412,8 @@
       "oldPrice": 29000,
       "news": true,
       "tagId": 7,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 17,
@@ -414,7 +430,8 @@
       "oldPrice": 29000,
       "news": false,
       "tagId": 8,
-      "hot": true
+      "hot": true,
+      "hasReview": true
     },
     {
       "id": 18,
@@ -430,7 +447,8 @@
       "newPrice": 23000,
       "oldPrice": 29000,
       "news": true,
-      "tagId": 4
+      "tagId": 4,
+      "hasReview": true
     },
     {
       "id": 19,
@@ -445,7 +463,8 @@
       "rate": 5,
       "newPrice": 12000,
       "news": true,
-      "tagId": 3
+      "tagId": 3,
+      "hasReview": false
     },
     {
       "id": 20,
@@ -460,7 +479,8 @@
       "rate": 5,
       "newPrice": 122000,
       "news": false,
-      "tagId": 3
+      "tagId": 3,
+      "hasReview": false
     },
     {
       "id": 21,
@@ -475,7 +495,8 @@
       "rate": 5,
       "newPrice": 122000,
       "news": true,
-      "tagId": 3
+      "tagId": 3,
+      "hasReview": false
     },
     {
       "id": 22,
@@ -490,7 +511,8 @@
       "rate": 5,
       "newPrice": 122000,
       "news": false,
-      "tagId": 3
+      "tagId": 3,
+      "hasReview": false
     },
     {
       "id": 23,
@@ -505,7 +527,8 @@
       "rate": 2,
       "newPrice": 122000,
       "news": false,
-      "tagId": 5
+      "tagId": 5,
+      "hasReview": false
     },
     {
       "id": 24,
@@ -520,7 +543,8 @@
       "rate": 2,
       "newPrice": 99000,
       "news": false,
-      "tagId": 5
+      "tagId": 5,
+      "hasReview": false
     },
     {
       "id": 25,
@@ -536,7 +560,8 @@
       "newPrice": 99000,
       "news": false,
       "tagId": 5,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 26,
@@ -552,7 +577,8 @@
       "newPrice": 99000,
       "news": false,
       "tagId": 5,
-      "hot": true
+      "hot": true,
+      "hasReview": true
     },
     {
       "id": 27,
@@ -568,7 +594,8 @@
       "newPrice": 99000,
       "news": false,
       "tagId": 4,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 28,
@@ -584,7 +611,8 @@
       "newPrice": 99000,
       "news": false,
       "tagId": 4,
-      "hot": true
+      "hot": true,
+      "hasReview": true
     },
     {
       "id": 29,
@@ -600,7 +628,8 @@
       "newPrice": 99000,
       "news": false,
       "tagId": 4,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 30,
@@ -617,7 +646,8 @@
       "oldPrice": 149000,
       "news": true,
       "tagId": 4,
-      "hot": true
+      "hot": true,
+      "hasReview": false
     },
     {
       "id": 31,
@@ -633,7 +663,8 @@
       "newPrice": 139000,
       "oldPrice": 149000,
       "news": false,
-      "tagId": 4
+      "tagId": 4,
+      "hasReview": false
     },
     {
       "id": 32,
@@ -649,7 +680,8 @@
       "newPrice": 139000,
       "oldPrice": 149000,
       "news": true,
-      "tagId": 4
+      "tagId": 4,
+      "hasReview": false
     },
     {
       "id": 33,
@@ -665,7 +697,8 @@
       "newPrice": 139000,
       "oldPrice": 149000,
       "news": false,
-      "tagId": 4
+      "tagId": 4,
+      "hasReview": false
     },
     {
       "id": 34,
@@ -681,7 +714,8 @@
       "newPrice": 139000,
       "oldPrice": 149000,
       "news": true,
-      "tagId": 4
+      "tagId": 4,
+      "hasReview": false
     },
     {
       "id": 35,
@@ -697,7 +731,8 @@
       "newPrice": 139000,
       "oldPrice": 149000,
       "news": false,
-      "tagId": 2
+      "tagId": 2,
+      "hasReview": false
     },
     {
       "id": 36,
