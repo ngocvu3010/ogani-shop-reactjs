@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getHomeProducts} from '../../redux/actions';
-import {selectHomeProductSelector, selectCategorySelector} from "../../redux/selector";
+import {selectFeatureProductSelector, selectCategorySelector} from "../../redux/selector";
 import productImage from '../../img/featured/feature-2.jpg';
 import axios from 'axios';
-const API_URL = process.env.REACT_APP_API_URL;
 const MAX_FEATURE_PRODUCTS = 12;
 
 function FeatureProduct() {
@@ -16,10 +15,10 @@ function FeatureProduct() {
     dispatch(getHomeProducts(params));
   }, [selectedFeatureCategory]);
 
-  const products = useSelector(selectHomeProductSelector);
+  const featureProducts = useSelector(selectFeatureProductSelector);
   const categories = useSelector(selectCategorySelector).filter((category) => category.featured);
   const renderProduct = () => {
-    return products.slice(0, MAX_FEATURE_PRODUCTS).map((product, index) => {
+    return featureProducts.slice(0, MAX_FEATURE_PRODUCTS).map((product, index) => {
       const image = product.img && product.img[0]
 
       return (
