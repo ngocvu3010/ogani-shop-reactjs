@@ -1,11 +1,17 @@
 import productImage from '../../img/latest-product/lp-1.jpg';
+import React from 'react';
+import {useHistory} from 'react-router-dom'
 
 function ProductList({products}){
-  console.log(products)
+  const history = useHistory();
+
   return products.map((product, index) => {
       const image = product.img && product.img[0];
       return(
-        <a href="#" className="latest-product__item" key={index}>
+        <a href="#" className="latest-product__item"
+          key={index}
+          onClick={() => history.push(`product/${product.id}`)}
+        >
           <div className="latest-product__item__pic">
             <img src={image} alt="" />
           </div>
@@ -18,6 +24,5 @@ function ProductList({products}){
     }
   )
  }
-
 
 export default ProductList;

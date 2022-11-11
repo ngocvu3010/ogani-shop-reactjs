@@ -3,3 +3,4 @@ export const selectFeatureProductSelector = (state) => state.productReducer.feat
 export const selectLatestProductSelector = (state) => state.productReducer.lastestProduct;
 export const selectTopRateProductSelector = (state) => state.productReducer.topRatedPRoduct;
 export const selectReviewProductSelector = (state) => state.productReducer.reviewProduct;
+export const selectProductSelector = (state) => state.productReducer.product;
