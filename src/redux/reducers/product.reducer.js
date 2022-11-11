@@ -8,7 +8,8 @@ const initialState = {
   product: {},
   isLoading: false,
   isError: false,
-  error: []
+  error: [],
+  totalProduct: 0
 };
 
 export default function productReducer(state = initialState, action) {
@@ -23,6 +24,7 @@ export default function productReducer(state = initialState, action) {
       return {
         ...state,
         featureProduct: action.payload.featured,
+        totalProduct: action.payload.totalProduct,
         isLoading: false
       };
 

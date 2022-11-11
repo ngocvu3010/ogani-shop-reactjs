@@ -2,10 +2,24 @@
   "categories": [
     {
       "id": 1,
-      "name": "Baker's Rack",
+      "name": "Đồ dùng ăn uống",
       "img": "https://cdn.shopify.com/s/files/1/0412/8151/9765/collections/cat10.jpg?v=1595858914 ",
       "description": "Adipisicing est ea et ipsum tempor incididunt elit id veniam quis magna.",
-      "featured": true
+      "featured": true,
+      "sub": [
+        {
+          "id": 100,
+          "name": "Inochi"
+        },
+        {
+          "id": 101,
+          "name": "Kidplaza"
+        },
+        {
+          "id": 102,
+          "name": "Chuchubaby"
+        }
+      ]
     },
     {
       "id": 2,
@@ -148,7 +162,7 @@
   "products": [
     {
       "id": 1,
-      "categoryId": 1,
+      "categoryId": 100,
       "name": "Orange Juice (5ltr) ",
       "img": [
         "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/49_590X668_crop_center.jpg?v=1595939069",
@@ -160,11 +174,15 @@
       "newPrice": 60000,
       "news": true,
       "tagId": 1,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 100000,
+      "color": "White",
+      "size": "Large"
     },
     {
       "id": 2,
-      "categoryId": 1,
+      "categoryId": 101,
       "name": "Fresh Blueberry",
       "img": [
         "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/2_590X668_crop_center.jpg?v=1620642391 ",
@@ -176,11 +194,15 @@
       "newPrice": 23000,
       "news": true,
       "tagId": 2,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 50000,
+      "color": "White",
+      "size": "Large"
     },
     {
       "id": 3,
-      "categoryId": 2,
+      "categoryId": 102,
       "name": "Organic Coconet ",
       "img": [
         "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/2_590X668_crop_center.jpg?v=1620642391 ",
@@ -192,11 +214,15 @@
       "newPrice": 35000,
       "news": false,
       "tagId": 2,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 50000,
+      "color": "White",
+      "size": "Large"
     },
     {
       "id": 4,
-      "categoryId": 3,
+      "categoryId": 100,
       "name": " Fresh Mussel (500g)",
       "img": [
         " https://cdn.shopify.com/s/files/1/0412/8151/9765/products/45_590X668_crop_center.jpg?v=1595938822",
@@ -208,11 +234,15 @@
       "newPrice": 20000,
       "news": true,
       "tagId": 2,
-      "hasReview": true
+      "hasReview": true,
+      "sale": true,
+      "oldPrice": 50000,
+      "color": "Gray",
+      "size": "Medium"
     },
     {
       "id": 5,
-      "categoryId": 4,
+      "categoryId": 101,
       "name": "Fresh Organic Fruit(50gm) ",
       "img": [
         "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/29_590X668_crop_center.jpg?v=1620641842 ",
@@ -225,7 +255,11 @@
       "oldPrice": 30000,
       "news": true,
       "tagId": 2,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 50.000,
+      "color": "Gray",
+      "size": "Medium"
     },
     {
       "id": 6,
@@ -242,11 +276,15 @@
       "oldPrice": 38000,
       "news": true,
       "tagId": 1,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 50.000,
+      "color": "Red",
+      "size": "Small"
     },
     {
       "id": 7,
-      "categoryId": 6,
+      "categoryId": 102,
       "name": "Fresh Carrot Natural Free ",
       "img": [
         " https://cdn.shopify.com/s/files/1/0412/8151/9765/products/22_590X668_crop_center.jpg?v=1620641623",
@@ -259,11 +297,13 @@
       "oldPrice": 72000,
       "news": false,
       "tagId": 2,
-      "hasReview": false
+      "hasReview": false,
+      "color": "Blue",
+      "size": "Tiny"
     },
     {
       "id": 8,
-      "categoryId": 8,
+      "categoryId": 100,
       "name": " Sp. Red Fresh Guava",
       "img": [
         "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/30_590X668_crop_center.jpg?v=1620642492 ",
@@ -275,11 +315,15 @@
       "newPrice": 90000,
       "news": true,
       "tagId": 4,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 50.000,
+      "color": "Black",
+      "size": "Tiny"
     },
     {
       "id": 9,
-      "categoryId": 10,
+      "categoryId": 100,
       "name": " Fruits Banana 100% Organic",
       "img": [
         "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/14_590X668_crop_center.jpg?v=1620642211   ",
@@ -291,11 +335,15 @@
       "newPrice": 12000,
       "news": false,
       "tagId": 3,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 50.000,
+      "color": "Green",
+      "size": "Tiny"
     },
     {
       "id": 10,
-      "categoryId": 11,
+      "categoryId": 100,
       "name": " Healthy Papaya 100% Organic",
       "img": [
         "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/11_63bd7f85-bfa5-4d43-b09f-d5b24e398ef6_590X668_crop_center.jpg?v=1620641903 ",
@@ -307,7 +355,11 @@
       "newPrice": 34000,
       "news": false,
       "tagId": 5,
-      "hasReview": false
+      "hasReview": false,
+      "sale": true,
+      "oldPrice": 50.000,
+      "color": "Green",
+      "size": "Tiny"
     },
     {
       "id": 11,

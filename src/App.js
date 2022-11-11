@@ -10,6 +10,8 @@ import './scss/style.scss';
 import UserLayout from "./components/Layouts/UserLayout";
 import Home from './pages/User/Home';
 import ProductDetail from './pages/User/ProductDetail';
+import CategoryDetail from './pages/User/CategoryDetail';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +28,9 @@ function App() {
         </Route>
         <Route exact path="/product/:productId">
           <UserLayout component={ProductDetail} />
+        </Route>
+        <Route exact path="/category/:categoryId">
+          <UserLayout component={CategoryDetail} />
         </Route>
       </Switch>
     </Router>

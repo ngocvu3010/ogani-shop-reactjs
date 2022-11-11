@@ -3466,3 +3466,17 @@ ol {
 		font-size: 24px;
 	}
 }
+.active {
+	background-color: antiquewhite !important;
+}
+
+.sidebar__item__size label {
+	.active {
+		background: antiquewhite;
+	}
+}
+a {
+	.active {
+		color: #e8911f;
+	}
+}
