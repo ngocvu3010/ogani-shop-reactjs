@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getCategory} from '../redux/actions';
 import {selectCategorySelector} from '../redux/selector';
+import {Link} from "react-router-dom";
 
 function Menu() {
   const dispatch = useDispatch();
@@ -25,7 +26,9 @@ function Menu() {
               <ul>
                 {categories.map((category, index) => (
                   <li key={index}>
-                    <a href="#">{category.name}</a>
+                    <Link to={`category/${category.id}`}>
+                      <a href="#">{category.name}</a>
+                    </Link>
                   </li>
                 ))}
               </ul>

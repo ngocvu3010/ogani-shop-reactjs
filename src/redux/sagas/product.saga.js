@@ -7,7 +7,7 @@ import {getProducts, getDetailProduct} from '../../apis/productsApi';
 function* getProductHomeSaga(action) {
   try {
     const response = yield call(getProducts, action.payload);
-    yield put(getHomeProductsSuccess({featured: response.data}));
+    yield put(getHomeProductsSuccess({featured: response.data, totalProduct: response.headers["x-total-count"]}));
   } catch (error) {
     yield put({type: GET_HOME_PRODUCT_FAIL, payload: error});
   }
