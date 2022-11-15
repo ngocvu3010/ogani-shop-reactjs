@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import React from "react";
 import Header from '../Header';
-import Menu from '../Menu';
 import Footer from '../Footer';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function UserLayout({component: Component}) {
   return (
     <>
+      <ToastContainer />
       <Header />
       <div className="main">
         <Component />

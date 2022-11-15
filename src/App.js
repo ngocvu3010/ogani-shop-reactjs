@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {ToastContainer, toast} from "react-toastify";
 import './css/elegant-icons.css';
 import './css/font-awesome.min.css';
 import './css/nice-select.css';
@@ -11,6 +12,7 @@ import UserLayout from "./components/Layouts/UserLayout";
 import Home from './pages/User/Home';
 import ProductDetail from './pages/User/ProductDetail';
 import CategoryDetail from './pages/User/CategoryDetail';
+import Login from './pages/User/Login'
 
 import {
   BrowserRouter as Router,
@@ -31,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/category/:categoryId">
           <UserLayout component={CategoryDetail} />
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
       </Switch>
     </Router>
