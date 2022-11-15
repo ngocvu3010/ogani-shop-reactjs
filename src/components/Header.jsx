@@ -1,7 +1,22 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import { useHistory, useLocation, Link } from "react-router-dom";
 
 function Header() {
+  const location = useLocation();
+  const history = useHistory();
+  const [currentUser, setCurrentUser] = useState({});
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("account"));
+    setCurrentUser(data);
+  }, [location]);
+
+  const handleClickLogin = () => {
+    if (currentUser) {
+      localStorage.clear();
+      history.push("/");
+    } else history.push("/login");
+  };
+
   return(
     <header className="header">
       <div className="header__top">
@@ -11,9 +26,9 @@ function Header() {
               <div className="header__top__left">
                 <ul>
                   <li>
-                    <i className="fa fa-envelope" /> hello@colorlib.com
+                    <i className="fa fa-envelope" /> {currentUser?.email}
                   </li>
-                  <li>Free Shipping for all Order of $99</li>
+                  <li>{currentUser?.last} {currentUser?.first}</li>
                 </ul>
               </div>
             </div>
@@ -47,8 +62,8 @@ function Header() {
                   </ul>
                 </div>
                 <div className="header__top__right__auth">
-                  <a href="#">
-                    <i className="fa fa-user" /> Login
+                  <a href="#" onClick={() => handleClickLogin()}>
+                    <i className="fa fa-user" /> {currentUser ? "Logout" : "Login"}
                   </a>
                 </div>
               </div>

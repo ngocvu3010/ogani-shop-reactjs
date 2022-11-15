@@ -1068,20 +1068,20 @@
     {
       "first": "Hehe",
       "last": "123",
-      "email": "12@gmail.com",
-      "password": "$2a$12$n/99dq0apIH5x4tIfwHT8e1OH4N5m65IG2d93PiEjeYb9gN90./1S",
+      "email": "ngoc@gmail.com",
+      "password": "$2a$04$j3Tr4YmGAf7HeQEwNquGZevzNIgmFLhvCf.O9Hsg1gtLoUXjhHC2W",
       "name": "Hehe 123",
-      "role": "admin",
+      "role": "user",
       "id": 6
     },
     {
-      "first": "Vu",
+      "first": "admin",
       "last": "Ly",
-      "email": "1ly11@gmail.com",
+      "email": "admin@gmail.com",
       "address": "HafNoi1",
       "phone": "0336328301",
-      "password": "$2a$12$Lh7y.HOMQLVokNctNTPEvuwpdjAT.1pTlJidTLAZpFWMz7O7aBhBm",
-      "role": "user",
+      "password": "$2a$04$j3Tr4YmGAf7HeQEwNquGZevzNIgmFLhvCf.O9Hsg1gtLoUXjhHC2W",
+      "role": "admin",
       "name": "Vu Ly",
       "id": 10
     },
