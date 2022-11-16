@@ -6,3 +6,6 @@ export const selectLatestProductSelector = (state) => state.productReducer.laste
 export const selectTopRateProductSelector = (state) => state.productReducer.topRatedPRoduct;
 export const selectReviewProductSelector = (state) => state.productReducer.reviewProduct;
 export const selectProductSelector = (state) => state.productReducer.product;
+
+export const selectCartSelector = (state) => state.cartReducer;
+export const getCurrentUserSelector = (state) => state.userReducer.user;

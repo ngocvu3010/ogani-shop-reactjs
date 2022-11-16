@@ -1,7 +1,7 @@
-import {LOGIN_USER, LOGIN_USER_SUCCESS, LOGIN_USER_FAIL} from '../constants';
+import {LOGIN_USER, LOGIN_USER_SUCCESS, LOGIN_USER_FAIL, LOGOUT_USER} from '../constants';
 
 const initialState = {
-  user: {},
+  user: null,
   isLoading: false,
   isError: false,
   errors: []
@@ -29,6 +29,14 @@ export default function userReducer(state = initialState, action) {
         isLoading: false,
         isError: true,
         errors: action.payload
+      }
+    }
+
+    case LOGOUT_USER: {
+      return {
+       ...state,
+        user: null,
+        isLoading: false
       }
     }
 
