@@ -5,6 +5,8 @@ import {selectFeatureProductSelector, selectCategorySelector} from "../../redux/
 import productImage from '../../img/featured/feature-2.jpg';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
+import Product from "../Product";
+import {getCurrentUserSelector} from "../../redux/selector";
 
 const MAX_FEATURE_PRODUCTS = 12;
 
@@ -15,10 +17,12 @@ function FeatureProduct() {
   useEffect(() => {
     let params = selectedFeatureCategory === "All" ? "" : `categoryId=${selectedFeatureCategory}`
     dispatch(getHomeProducts(params));
+
   }, [selectedFeatureCategory]);
 
   const featureProducts = useSelector(selectFeatureProductSelector);
   const categories = useSelector(selectCategorySelector).filter((category) => category.featured);
+
   const renderProduct = () => {
     return featureProducts.slice(0, MAX_FEATURE_PRODUCTS).map((product, index) => {
       const image = product.img && product.img[0]
@@ -27,38 +31,7 @@ function FeatureProduct() {
         <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat"
           key={index}
         >
-          <div className="featured__item">
-            <div
-              className="featured__item__pic set-bg"
-              style={{backgroundImage: `url(${image})`}}
-            >
-              <ul className="featured__item__pic__hover">
-                <li>
-                  <a href="#">
-                    <i className="fa fa-heart" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-retweet" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-shopping-cart" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <Link to={`/product/${product.id}`} >
-              <div className="featured__item__text">
-                <h6>
-                  <a href="#">{product.name}</a>
-                </h6>
-                <h5>${product.newPrice}</h5>
-              </div>
-            </Link>
-          </div>
+          <Product product={product}/>
         </div>
       )
     })

@@ -1,20 +1,39 @@
 import React, {useEffect, useState} from "react";
 import { useHistory, useLocation, Link } from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux";
+import {selectCartSelector} from "../redux/selector";
+import {logoutUser, getCart, loginUserSuccess, updateCartSuccess} from  "../redux/actions";
+import {getCurrentUserSelector} from "../redux/selector";
 
 function Header() {
   const location = useLocation();
   const history = useHistory();
-  const [currentUser, setCurrentUser] = useState({});
+  const dispatch = useDispatch();
+  const currentUser = useSelector(getCurrentUserSelector);
+  const cartDataInfo = useSelector(selectCartSelector);
+  const likeProduct = JSON.parse(localStorage.getItem("likeProduct"));
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("account"));
-    setCurrentUser(data);
-  }, [location]);
+    const userData = JSON.parse(localStorage.getItem("account"));
+    if (!currentUser && userData) {
+      dispatch(loginUserSuccess(userData));
+    }
+
+    if (userData) {
+      dispatch(getCart({userId: userData.id}))
+    }
+
+  }, []);
+  const totalPrices = cartDataInfo.cartData.reduce((sum, item) => sum + (item.price * item.amount), 0);
 
   const handleClickLogin = () => {
     if (currentUser) {
       localStorage.clear();
+      dispatch(logoutUser());
+      dispatch(updateCartSuccess([]));
       history.push("/");
-    } else history.push("/login");
+    } else {
+      history.push("/login");
+    }
   };
 
   return(
@@ -114,17 +133,17 @@ function Header() {
               <ul>
                 <li>
                   <a href="#">
-                    <i className="fa fa-heart" /> <span>1</span>
+                    <i className="fa fa-heart" /> <span>{likeProduct?.length || 0}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i className="fa fa-shopping-bag" /> <span>3</span>
+                    <i className="fa fa-shopping-bag" /> <span>{cartDataInfo?.cartData?.length}</span>
                   </a>
                 </li>
               </ul>
               <div className="header__cart__price">
-                item: <span>$150.00</span>
+                item: <span>${totalPrices}</span>
               </div>
             </div>
           </div>

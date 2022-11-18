@@ -55,7 +55,6 @@
       "img": "https://cdn.shopify.com/s/files/1/0412/8151/9765/collections/banner5_19e6fd2c-70b2-459d-b4d5-d7680262856a.jpg?v=1595936691 ",
       "description": "Ad quis do sint culpa non in non.",
       "featured": false
-
     },
     {
       "id": 7,
@@ -252,12 +251,11 @@
       ],
       "rate": 2,
       "newPrice": 23000,
-      "oldPrice": 30000,
+      "oldPrice": 50,
       "news": true,
       "tagId": 2,
       "hasReview": false,
       "sale": true,
-      "oldPrice": 50.000,
       "color": "Gray",
       "size": "Medium"
     },
@@ -273,12 +271,11 @@
       ],
       "rate": 2,
       "newPrice": 34000,
-      "oldPrice": 38000,
+      "oldPrice": 50,
       "news": true,
       "tagId": 1,
       "hasReview": false,
       "sale": true,
-      "oldPrice": 50.000,
       "color": "Red",
       "size": "Small"
     },
@@ -317,7 +314,7 @@
       "tagId": 4,
       "hasReview": false,
       "sale": true,
-      "oldPrice": 50.000,
+      "oldPrice": 50,
       "color": "Black",
       "size": "Tiny"
     },
@@ -337,7 +334,7 @@
       "tagId": 3,
       "hasReview": false,
       "sale": true,
-      "oldPrice": 50.000,
+      "oldPrice": 50,
       "color": "Green",
       "size": "Tiny"
     },
@@ -357,7 +354,7 @@
       "tagId": 5,
       "hasReview": false,
       "sale": true,
-      "oldPrice": 50.000,
+      "oldPrice": 50,
       "color": "Green",
       "size": "Tiny"
     },
@@ -1238,57 +1235,27 @@
   ],
   "carts": [
     {
-      "user": "ngoc@gmail.com",
       "cartData": [
+        {
+          "id": 2,
+          "name": "Fresh Blueberry",
+          "price": 23000,
+          "amount": 4
+        },
         {
           "id": 3,
           "name": "Organic Coconet ",
           "price": 35000,
-          "img": [
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/2_590X668_crop_center.jpg?v=1620642391 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/39_590X668_crop_center.jpg?v=1620642397 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/2_590X668_crop_center.jpg?v=1620642391 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/39_590X668_crop_center.jpg?v=1620642397 "
-          ],
-          "amount": 4
+          "amount": 2
         },
         {
-          "id": 12,
-          "name": "Blackberry 100% Organic ",
-          "price": 23000,
-          "img": [
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/4_e3af2cd6-0f26-42a3-8071-42cae821c669_590X668_crop_center.jpg?v=1620644020 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/3_f7390f79-2601-4bf0-a996-6635b67d28c7_590X668_crop_center.jpg?v=1620644039 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/4_e3af2cd6-0f26-42a3-8071-42cae821c669_590X668_crop_center.jpg?v=1620644020 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/3_f7390f79-2601-4bf0-a996-6635b67d28c7_590X668_crop_center.jpg?v=1620644039 "
-          ],
-          "amount": 1
-        },
-        {
-          "id": 16,
-          "name": " Fresh Grassben",
-          "price": 23000,
-          "img": [
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/20_590X668_crop_center.jpg?v=1620642567 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/8_82074fbc-f168-4c13-8964-5c60b8b5f482_590X668_crop_center.jpg?v=1620642575 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/20_590X668_crop_center.jpg?v=1620642567 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/8_82074fbc-f168-4c13-8964-5c60b8b5f482_590X668_crop_center.jpg?v=1620642575 "
-          ],
-          "amount": 1
-        },
-        {
-          "id": 15,
-          "name": " Fresh Grassben",
-          "price": 23000,
-          "img": [
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/20_590X668_crop_center.jpg?v=1620642567 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/8_82074fbc-f168-4c13-8964-5c60b8b5f482_590X668_crop_center.jpg?v=1620642575 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/20_590X668_crop_center.jpg?v=1620642567 ",
-            "https://cdn.shopify.com/s/files/1/0412/8151/9765/products/8_82074fbc-f168-4c13-8964-5c60b8b5f482_590X668_crop_center.jpg?v=1620642575 "
-          ],
+          "id": 1,
+          "name": "Orange Juice (5ltr) ",
+          "price": 60000,
           "amount": 1
         }
       ],
+      "userId": 6,
       "id": 1
     }
   ],
