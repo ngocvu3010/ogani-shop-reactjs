@@ -108,22 +108,9 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <a href="#">Shop</a>
-                </li>
-                <li>
-                  <a href="#">Pages</a>
-                  <ul className="header__menu__dropdown">
-                    <li>
-                      <a href="#">Shop Details</a>
-                    </li>
-                    <li>
-                      <a href="#">Shoping Cart</a>
-                    </li>
-                    <li>
-                      <a href="#">Check Out</a>
-                    </li>
-
-                  </ul>
+                  <Link to="/carts">
+                    <a href="#">Cart</a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -137,9 +124,11 @@ function Header() {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <i className="fa fa-shopping-bag" /> <span>{cartDataInfo?.cartData?.length}</span>
-                  </a>
+                  <Link to="/carts">
+                    <a href="#">
+                      <i className="fa fa-shopping-bag" /> <span>{cartDataInfo?.cartData?.length}</span>
+                    </a>
+                  </Link>
                 </li>
               </ul>
               <div className="header__cart__price">

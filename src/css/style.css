@@ -3480,3 +3480,12 @@ a {
 		color: #e8911f;
 	}
 }
+
+.error p {
+  color: #bf1650 !important;
+}
+
+.error p::before  {
+  display: inline !important;
+  content: "⚠ " !important;
+}

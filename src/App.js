@@ -12,7 +12,9 @@ import UserLayout from "./components/Layouts/UserLayout";
 import Home from './pages/User/Home';
 import ProductDetail from './pages/User/ProductDetail';
 import CategoryDetail from './pages/User/CategoryDetail';
-import Login from './pages/User/Login'
+import Login from './pages/User/Login';
+import CheckoutCart from "./pages/User/CheckoutCart";
+import Billing from "./pages/User/Billing";
 
 import {
   BrowserRouter as Router,
@@ -33,6 +35,12 @@ function App() {
         </Route>
         <Route exact path="/category/:categoryId">
           <UserLayout component={CategoryDetail} />
+        </Route>
+        <Route exact path="/carts">
+          <UserLayout component={CheckoutCart} />
+        </Route>
+        <Route exact path="/billing">
+          <UserLayout component={Billing} />
         </Route>
         <Route exact path="/login">
           <Login />

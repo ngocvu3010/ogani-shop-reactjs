@@ -1,4 +1,4 @@
-import {UPDATE_CART, UPDATE_CART_SUCCESS, UPDATE_CART_FAILED, GET_CART} from '../constants';
+import {UPDATE_CART, UPDATE_CART_SUCCESS, UPDATE_CART_FAILED, GET_CART, CREATE_BILL} from '../constants';
 
 const initialState = {
   cartData: [],
@@ -10,6 +10,13 @@ const initialState = {
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_CART: {
+      return {
+        ...state,
+        isLoading: true
+      }
+    }
+
+    case CREATE_BILL: {
       return {
         ...state,
         isLoading: true
