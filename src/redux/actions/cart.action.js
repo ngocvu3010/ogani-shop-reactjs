@@ -1,4 +1,5 @@
-import {UPDATE_CART, UPDATE_CART_SUCCESS, UPDATE_CART_FAILED, GET_CART} from '../constants';
+import {UPDATE_CART, UPDATE_CART_SUCCESS, UPDATE_CART_FAILED, GET_CART,
+  CREATE_BILL, CREATE_BILL_SUCCESS, CREATE_BILL_FAIL} from '../constants';
 
 export function updateCart(payload){
   return {
@@ -27,3 +28,10 @@ export function updateCartFail(payload){
     payload
   };
 };
+
+export function createBilling(payload){
+  return {
+    type: CREATE_BILL,
+    payload
+  }
+}
