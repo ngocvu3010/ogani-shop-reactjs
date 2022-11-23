@@ -1,4 +1,4 @@
-import {GET_HOME_PRODUCT, GET_HOME_PRODUCT_SUCCESS, GET_HOME_PRODUCT_FAIL, GET_TOP_PRODUCT_SUCCESS, GET_TOP_PRODUCT, GET_TOP_PRODUCT_FAIL, GET_DETAIL_PRODUCT, GET_DETAIL_PRODUCT_SUCCESS, GET_DETAIL_PRODUCT_FAIL} from "../constants"
+import {GET_HOME_PRODUCT, GET_HOME_PRODUCT_SUCCESS, GET_HOME_PRODUCT_FAIL, GET_TOP_PRODUCT_SUCCESS, GET_TOP_PRODUCT, GET_TOP_PRODUCT_FAIL, GET_DETAIL_PRODUCT, GET_DETAIL_PRODUCT_SUCCESS, GET_DETAIL_PRODUCT_FAIL, CREATE_PRODUCT, CREATE_PRODUCT_SUCCESS, CREATE_PRODUCT_FAIL} from "../constants"
 
 const initialState = {
   featureProduct: [],
@@ -69,6 +69,26 @@ export default function productReducer(state = initialState, action) {
       }
 
     case GET_DETAIL_PRODUCT_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        error: action.payload
+      }
+
+    case CREATE_PRODUCT:
+      return {
+        ...state,
+        isLoading: true
+      }
+
+    case CREATE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false
+      }
+
+      case CREATE_PRODUCT_FAIL:
       return {
         ...state,
         isLoading: false,

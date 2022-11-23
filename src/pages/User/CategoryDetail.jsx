@@ -7,6 +7,7 @@ import breadcum from '../../img/breadcrumb.jpg';
 import ProductList from "../../components/Category/ProductList";
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import {COLORS, SIZES, PRDUCT_PER_PAGE} from "../../constants";
 
 const settings = {
   dots: true,
@@ -15,9 +16,6 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1
 };
-
-const COLORS = ["White", "Gray", "Red", "Black", "Blue", "Green"];
-const SIZES = ["Large", "Medium", "Small", "Tiny"];
 
 function CategoryDetail() {
   const {categoryId} = useParams();
@@ -65,7 +63,7 @@ function CategoryDetail() {
       }
       params +=`&newPrice_gte=${price[0]}&newPrice_lte=${price[1]}`;
       params +=`&_sort=newPrice&_order=${orderType}`;
-      params +=`&_page=${page}&_limit=4`;
+      params +=`&_page=${page}&_limit=${PRDUCT_PER_PAGE}`;
       dispatch(getHomeProducts(params.substring(1)))
     }
   }, [category, selectedSubCategory, price, selectedColor, selectedSize, orderType, page]);

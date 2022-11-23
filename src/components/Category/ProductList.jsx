@@ -7,15 +7,8 @@ import {selectCartSelector} from "../../redux/selector";
 import Product from "../Product"
 import {getCurrentUserSelector} from "../../redux/selector";
 import {flashSuccess, flashError} from "../../untils/flash";
+import {PRDUCT_PER_PAGE} from "../../constants"
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1
-};
-const totalPerPage = 4;
 
 function ProductList({products, orderType, setOrderType, page, setPage}) {
   const currentUser = useSelector(getCurrentUserSelector);
@@ -24,8 +17,15 @@ function ProductList({products, orderType, setOrderType, page, setPage}) {
   const dispatch = useDispatch();
 
   const saledProduct = products.filter(product => product.sale);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: saledProduct.length >= 4 ? 4 : saledProduct.length,
+    slidesToScroll: 1
+  };
   const totalProduct = useSelector((state) => state.productReducer.totalProduct)
-  const totalPage = Math.ceil(parseInt(totalProduct) / totalPerPage);
+  const totalPage = Math.ceil(parseInt(totalProduct) / PRDUCT_PER_PAGE);
   const pageNumbers = [];
   for (let i = 1; i <= totalPage; i++) {
     pageNumbers.push(i);

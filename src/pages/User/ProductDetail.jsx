@@ -1,10 +1,11 @@
 import breadcum from '../../img/breadcrumb.jpg';
 import {useHistory, useParams} from "react-router-dom";
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getProductDetail} from "../../redux/actions";
-import {selectProductSelector} from "../../redux/selector";
+import {getProductDetail, updateCart, updateLike} from "../../redux/actions";
+import {selectProductSelector, selectCartSelector} from "../../redux/selector";
 import Slider from "react-slick";
+import {flashSuccess, flashError} from "../../untils/flash";
 
 const settings = {
   dots: true,
@@ -15,12 +16,55 @@ const settings = {
 };
 
 function ProductDetail() {
+  const cartDataInfo = useSelector(selectCartSelector);
+  const currentUser = JSON.parse(localStorage.getItem("account"));
+  const history = useHistory();
+  const [amount, setAmount] = useState(1);
+
   const {productId} = useParams();
   const dispatch = useDispatch();
   const product = useSelector(selectProductSelector);
   useEffect(() => {
-    dispatch(getProductDetail(productId))
+    dispatch(getProductDetail(productId));
   }, []);
+
+  const handleAddCart = (product) => {
+    if (currentUser) {
+      const cartData = cartDataInfo.cartData;
+      let arr = [];
+      if (cartData.length) {
+        const selectedItem = cartData.find((item) => item.id == product.id);
+
+        if (selectedItem) {
+          const selectedIndex = cartData.findIndex((item) => item.id == product.id);
+          cartData.splice(selectedIndex, 1, {...selectedItem, amount: selectedItem.amount + amount});
+          arr = [...cartData];
+        } else {
+          const item = {id: product.id, name: product.name, price: product.newPrice, amount: amount};
+          arr = [...cartData, item];
+        }
+      } else {
+        const item = {id: product.id, name: product.name, price: product.newPrice, amount: amount};
+        arr = [...cartData, item];
+      }
+      dispatch(updateCart({cartData: arr, userId: currentUser.id}))
+    } else {
+      flashError("🦄 Bạn cần đăng nhập trước khi mua hàng");
+      history.push("/login");
+    }
+  };
+
+  const handleLikeProduct = (product) => {
+    const likeData = JSON.parse(localStorage.getItem("likeProduct")) || [];
+    const selectedItem = likeData.find((item) => item === product.id);
+    let arr = [];
+    if (selectedItem) {
+      arr = [...likeData];
+    } else arr = [...likeData, product.id];
+
+    localStorage.setItem("likeProduct", JSON.stringify(arr));
+    flashSuccess("🦄 Thêm sản phẩm thành công");
+  }
 
   return(
     <>
@@ -91,14 +135,15 @@ function ProductDetail() {
                 <div className="product__details__quantity">
                   <div className="quantity">
                     <div className="pro-qty">
-                      <input type="text" defaultValue={1} />
-                    </div>
+                      <span className="dec qtybtn" onClick={() => setAmount(amount == 0 ? 0 : (amount - 1))}>-</span>
+                      <input type="text" value={amount} onChange={(e) => setAmount(e.target.value)}/>
+                      <span className="inc qtybtn" onClick={() => setAmount(amount + 1)}>+</span></div>
                   </div>
                 </div>
-                <a href="#" className="primary-btn">
+                <a href="#" className="primary-btn" onClick={() => handleAddCart(product)}>
                   ADD TO CARD
                 </a>
-                <a href="#" className="heart-icon">
+                <a href="#" className="heart-icon" onClick={() => handleLikeProduct(product)}>
                   <span className="icon_heart_alt" />
                 </a>
                 <ul>
