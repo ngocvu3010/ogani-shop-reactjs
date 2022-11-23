@@ -48,6 +48,7 @@ function Header() {
                     <i className="fa fa-envelope" /> {currentUser?.email}
                   </li>
                   <li>{currentUser?.last} {currentUser?.first}</li>
+                  {currentUser?.role == "admin" ? (<Link to="/admin"><li>Admin Site</li></Link>) : ""}
                 </ul>
               </div>
             </div>

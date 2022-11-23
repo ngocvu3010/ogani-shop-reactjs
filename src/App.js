@@ -9,13 +9,15 @@ import './css/style.css';
 import './scss/style.scss';
 
 import UserLayout from "./components/Layouts/UserLayout";
+import AdminLayout from "./components/Layouts/AdminLayout";
 import Home from './pages/User/Home';
 import ProductDetail from './pages/User/ProductDetail';
 import CategoryDetail from './pages/User/CategoryDetail';
 import Login from './pages/User/Login';
 import CheckoutCart from "./pages/User/CheckoutCart";
 import Billing from "./pages/User/Billing";
-
+import AdminProducts from "./pages/Admin/Products"
+import CreateProduct from "./pages/Admin/CreateProduct";
 import {
   BrowserRouter as Router,
   Switch,
@@ -44,6 +46,12 @@ function App() {
         </Route>
         <Route exact path="/login">
           <Login />
+        </Route>
+        <Route exact path="/admin">
+          <AdminLayout component={AdminProducts} />
+        </Route>
+        <Route exact path="/admin/create_product">
+          <AdminLayout component={CreateProduct} />
         </Route>
       </Switch>
     </Router>

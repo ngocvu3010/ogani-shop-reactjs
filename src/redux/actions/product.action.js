@@ -1,6 +1,6 @@
 import {GET_HOME_PRODUCT, GET_HOME_PRODUCT_SUCCESS,
   GET_TOP_PRODUCT, GET_TOP_PRODUCT_SUCCESS,
-  GET_DETAIL_PRODUCT, GET_DETAIL_PRODUCT_SUCCESS, GET_DETAIL_PRODUCT_FAIL} from '../constants';
+  GET_DETAIL_PRODUCT, GET_DETAIL_PRODUCT_SUCCESS, GET_DETAIL_PRODUCT_FAIL, CREATE_PRODUCT} from '../constants';
 
 export function getHomeProducts(payload){
   return {
@@ -50,3 +50,11 @@ export function getProductDetailFail(payload) {
     payload
   }
 }
+
+
+export function createProductAction(payload){
+  return {
+    type: CREATE_PRODUCT,
+    payload
+  };
+};

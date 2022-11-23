@@ -27,7 +27,8 @@ function* loginSaga(action) {
           id: user.id,
           email: user.email,
           first: user.first,
-          last: user.last
+          last: user.last,
+          role: user.role
         }));
         if (user.role === "user") {
           history.push("/")

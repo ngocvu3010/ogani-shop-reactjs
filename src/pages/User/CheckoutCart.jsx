@@ -17,7 +17,9 @@ function CheckoutCart() {
     const elementIndex = carts.findIndex(object => object.id == cart.id);
 
     if (type == "-") {
-      amount = cart.amount - 1;
+      if (cart.amount != 0) {
+        amount = cart.amount - 1;
+      }
     } else {
       amount = cart.amount + 1;
     }
@@ -72,7 +74,9 @@ function CheckoutCart() {
                       <tr key={index}>
                         <td className="shoping__cart__item">
                           <img src="img/cart/cart-1.jpg" alt="" />
-                          <h5>{cart.name}</h5>
+                          <Link to={`/product/${cart.id}`}>
+                            <h5>{cart.name}</h5>
+                          </Link>
                         </td>
                         <td className="shoping__cart__price">${cart.price}</td>
                         <td className="shoping__cart__quantity">
